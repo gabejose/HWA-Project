@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS boat_clubs;
 DROP TABLE IF EXISTS boats;
+DROP TABLE IF EXISTS boat_clubs;
 
 CREATE TABLE boat_clubs (
 	boat_club_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -18,6 +18,6 @@ CREATE TABLE boats (
 	rigger_material VARCHAR(255) NOT NULL,
 	is_wing_rigger CHAR(1) NOT NULL,
 	boat_club_id INT NOT NULL,
-	FOREIGN KEY (boat_club_id) REFERENCES boat_clubs (boat_club_id),
+	FOREIGN KEY (boat_club_id) REFERENCES boat_clubs (boat_club_id)
 	ON DELETE CASCADE
 );
