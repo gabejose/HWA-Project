@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Boat {
@@ -29,7 +30,10 @@ public class Boat {
 	
 	@Column(name = "is_wing_rigger", nullable = false)
 	private boolean isWingRigger;
-
+	
+	@ManyToOne
+	private BoatClub boatClub;
+	
 	public Boat() {
 		super();
 	}
@@ -53,6 +57,18 @@ public class Boat {
 		this.averageCrewWeight = averageCrewWeight;
 		this.riggerMaterial = riggerMaterial;
 		this.isWingRigger = isWingRigger;
+	}
+	
+	public Boat(long boatId, String boatType, String boatCompany, int averageCrewWeight, String riggerMaterial,
+			boolean isWingRigger, BoatClub boatClub) {
+		super();
+		this.boatId = boatId;
+		this.boatType = boatType;
+		this.boatCompany = boatCompany;
+		this.averageCrewWeight = averageCrewWeight;
+		this.riggerMaterial = riggerMaterial;
+		this.isWingRigger = isWingRigger;
+		this.boatClub = boatClub;
 	}
 
 	public long getBoatId() {
