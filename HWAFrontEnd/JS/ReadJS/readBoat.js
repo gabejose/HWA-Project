@@ -85,7 +85,7 @@ let createTable = (data) => {
     newTableAvgWeightCell.textContent = data.averageCrewWeight;
     newTableMaterialCell.textContent = data.riggerMaterial;
     newTableWingRiggerCell.textContent = data.wingRigger;
-    newTableBoatClubIdCell.textContent = data.boatClubId;
+    newTableBoatClubIdCell.textContent = data.boatClub.boatClubId;
 
     // Append everything
     newTableRow.appendChild(newTableBoatIdCell);

@@ -48,6 +48,7 @@ public class BoatController {
 	}
 	
 	// Update
+	@GetMapping("/updateBoat/{id}")
 	public ResponseEntity<Boat> updateBoat(@PathVariable long id, @RequestBody Boat boat) {
 		return new ResponseEntity<Boat>(this.service.updateBoat(id, boat), HttpStatus.ACCEPTED);
 	}

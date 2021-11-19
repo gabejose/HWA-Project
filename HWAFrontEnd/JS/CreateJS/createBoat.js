@@ -5,7 +5,7 @@ let boatTypeInput = document.querySelector('#boatTypeInput');
 let boatCompanyInput = document.querySelector('#boatCompanyInput');
 let avgCrewWeightInput = document.querySelector('#avgCrewWeightInput');
 let riggerMaterialInput = document.querySelector('#riggerMaterialInput');
-let isWingRiggerInput = document.querySelector('#isWingRiggerInput');
+let wingRiggerInput = document.querySelector('#isWingRiggerInput');
 let boatClubIdInput = document.querySelector('#boatClubIdInput');
 
 let createBtn = document.querySelector('#createBtn');
@@ -15,7 +15,7 @@ console.log(boatTypeInput);
 console.log(boatCompanyInput);
 console.log(avgCrewWeightInput);
 console.log(riggerMaterialInput);
-console.log(isWingRiggerInput);
+console.log(wingRiggerInput);
 console.log(boatClubIdInput);
 console.log(createBtn);
 
@@ -25,7 +25,7 @@ let postData = () => {
     let companyValue = boatCompanyInput.value;
     let weightValue = avgCrewWeightInput.value;
     let materialValue = riggerMaterialInput.value;
-    let wingValue = isWingRiggerInput.value;
+    let wingValue = wingRiggerInput.value;
     let clubIdValue = boatClubIdInput.value;
 
     let newBoat = {
@@ -33,8 +33,10 @@ let postData = () => {
         boatCompany: companyValue,
         averageCrewWeight: weightValue,
         riggerMaterial: materialValue,
-        isWingRigger: wingValue,
-        boatClubId: clubIdValue
+        wingRigger: wingValue,
+        boatClub: {
+            boatClubId: clubIdValue
+        }
     };
 
     postFetch(newBoat);

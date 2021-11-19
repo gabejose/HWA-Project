@@ -28,46 +28,36 @@ public class Boat {
 	@Column(name = "rigger_material", nullable = false)
 	private String riggerMaterial;
 	
-	@Column(name = "is_wing_rigger", nullable = false)
-	private boolean isWingRigger;
+	@Column(name = "wing_rigger", nullable = false)
+	private boolean wingRigger;
 	
 	@ManyToOne
 	private BoatClub boatClub;
-	
+
 	public Boat() {
 		super();
 	}
 
 	public Boat(long boatId, String boatType, String boatCompany, int averageCrewWeight, String riggerMaterial,
-			boolean isWingRigger) {
+			boolean wingRigger, BoatClub boatClub) {
 		super();
 		this.boatId = boatId;
 		this.boatType = boatType;
 		this.boatCompany = boatCompany;
 		this.averageCrewWeight = averageCrewWeight;
 		this.riggerMaterial = riggerMaterial;
-		this.isWingRigger = isWingRigger;
+		this.wingRigger = wingRigger;
+		this.boatClub = boatClub;
 	}
 
-	public Boat(String boatType, String boatCompany, int averageCrewWeight, String riggerMaterial,
-			boolean isWingRigger) {
+	public Boat(String boatType, String boatCompany, int averageCrewWeight, String riggerMaterial, boolean wingRigger,
+			BoatClub boatClub) {
 		super();
 		this.boatType = boatType;
 		this.boatCompany = boatCompany;
 		this.averageCrewWeight = averageCrewWeight;
 		this.riggerMaterial = riggerMaterial;
-		this.isWingRigger = isWingRigger;
-	}
-	
-	public Boat(long boatId, String boatType, String boatCompany, int averageCrewWeight, String riggerMaterial,
-			boolean isWingRigger, BoatClub boatClub) {
-		super();
-		this.boatId = boatId;
-		this.boatType = boatType;
-		this.boatCompany = boatCompany;
-		this.averageCrewWeight = averageCrewWeight;
-		this.riggerMaterial = riggerMaterial;
-		this.isWingRigger = isWingRigger;
+		this.wingRigger = wingRigger;
 		this.boatClub = boatClub;
 	}
 
@@ -112,16 +102,24 @@ public class Boat {
 	}
 
 	public boolean isWingRigger() {
-		return isWingRigger;
+		return wingRigger;
 	}
 
-	public void setWingRigger(boolean isWingRigger) {
-		this.isWingRigger = isWingRigger;
+	public void setWingRigger(boolean wingRigger) {
+		this.wingRigger = wingRigger;
+	}
+
+	public BoatClub getBoatClub() {
+		return boatClub;
+	}
+
+	public void setBoatClub(BoatClub boatClub) {
+		this.boatClub = boatClub;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(averageCrewWeight, boatCompany, boatId, boatType, isWingRigger, riggerMaterial);
+		return Objects.hash(averageCrewWeight, boatClub, boatCompany, boatId, boatType, riggerMaterial, wingRigger);
 	}
 
 	@Override
@@ -133,8 +131,11 @@ public class Boat {
 		if (getClass() != obj.getClass())
 			return false;
 		Boat other = (Boat) obj;
-		return averageCrewWeight == other.averageCrewWeight && Objects.equals(boatCompany, other.boatCompany)
-				&& boatId == other.boatId && Objects.equals(boatType, other.boatType)
-				&& isWingRigger == other.isWingRigger && Objects.equals(riggerMaterial, other.riggerMaterial);
+		return averageCrewWeight == other.averageCrewWeight && Objects.equals(boatClub, other.boatClub)
+				&& Objects.equals(boatCompany, other.boatCompany) && boatId == other.boatId
+				&& Objects.equals(boatType, other.boatType) && Objects.equals(riggerMaterial, other.riggerMaterial)
+				&& wingRigger == other.wingRigger;
 	}
+	
+	
 }
