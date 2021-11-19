@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.qa.demo.domain.Boat;
 import com.qa.demo.service.BoatService;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/boat")
 public class BoatController {
@@ -46,6 +48,7 @@ public class BoatController {
 	}
 	
 	// Update
+	@GetMapping("/updateBoat/{id}")
 	public ResponseEntity<Boat> updateBoat(@PathVariable long id, @RequestBody Boat boat) {
 		return new ResponseEntity<Boat>(this.service.updateBoat(id, boat), HttpStatus.ACCEPTED);
 	}
