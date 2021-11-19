@@ -27,15 +27,5 @@ let readAll = () => {
         });
 }
 
-// Function to create a card for all boat clubs
-let createTable = (data) => {
-    let newTable = document.createElement('table');
-    let newTableHead = document.createElement('thead');
-    let newTableRow = document.createElement('tr');
-    let newTableColName = document.createElement('th');
-    let newTableBody = document.createElement('tbody');
 
-
-
-}
 readAllBtn.addEventListener('click', readAll);
