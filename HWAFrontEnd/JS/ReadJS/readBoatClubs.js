@@ -22,10 +22,8 @@ let getId = () => {
 
 // Function to clear the table
 let clearTable = () => {
-    let rowCount = boatClubTable.rows.length;
-    for (let i = 1; i < rowCount; i++) {
-        boatClubTable.deleteRow(i);
-    }
+    let clearBody = document.querySelector('tbody');
+    boatClubTable.removeChild(clearBody);
 }
 
 // Function to read all boat clubs (Fetch request - GET method)
