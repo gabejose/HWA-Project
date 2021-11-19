@@ -35,10 +35,12 @@ let updateFetch = (id) => {
         averageCrewWeight: avgCrewWeightInput.value,
         riggerMaterial: riggerMaterialInput.value,
         wingRigger: isWingRiggerInput.value,
-        boatClubId: boatClubIdInput.value
+        boatClub: {
+            boatClubId: boatClubIdInput.value
+        }
     }
 
-    fetch(`http://localhost:9000/boat/update/${id}`, {
+    fetch(`http://localhost:9000/boat/updateBoat/${id}`, {
         method: 'PUT',
         headers: {
             "Content-type": "application/JSON"
