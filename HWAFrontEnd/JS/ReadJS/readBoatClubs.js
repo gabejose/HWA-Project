@@ -5,17 +5,27 @@ let readAllBtn = document.querySelector('#readAllBtn');
 let readByIdBtn = document.querySelector('#readByIdBtn');
 let boatClubIdInput = document.querySelector('#boatClubIdInput');
 let boatClubTable = document.querySelector('#boatClubTable');
+let clearTableBtn = document.querySelector('#clearTableBtn');
 
 // Check if they are getting retrieved
 console.log(readAllBtn);
 console.log(readByIdBtn);
 console.log(boatClubIdInput);
 console.log(boatClubTable);
+console.log(boatClubIdInput);
 
 // Function to save value of input field
 let getId = () => {
     let boatClubIdValue = boatClubIdInput.value;
     readById(boatClubIdValue);
+}
+
+// Function to clear the table
+let clearTable = () => {
+    let rowCount = boatClubTable.rows.length;
+    for (let i = 1; i < rowCount; i++) {
+        boatClubTable.deleteRow(i);
+    }
 }
 
 // Function to read all boat clubs (Fetch request - GET method)
@@ -90,3 +100,4 @@ let createTable = (data) => {
 
 readAllBtn.addEventListener('click', readAll);
 readByIdBtn.addEventListener('click', getId);
+clearTableBtn.addEventListener('click', clearTable);
