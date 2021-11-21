@@ -37,7 +37,7 @@ public class DeleteBoatTest {
 	// Check if h4 tag contains text "Let's delete a boat...by smashing it"
 	@Test
 	public void h4TextTest() {
-		String text = "Enter the ID of the boat you wish to delete:";
+		String text = "Enter the ID of the boat you wish to smash:";
 		driver.get("http://127.0.0.1:5500/HWAFrontEnd/HTML/Delete/deleteBoat.html");
 		
 		WebElement h4 = driver.findElement(By.xpath("/html/body/h4"));
