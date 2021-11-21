@@ -65,7 +65,7 @@ public class BoatClubServiceUnitTest {
 	public void updateBoatClubTest() {
 		long newId = 1L;
 		BoatClub old = new BoatClub(1L, "London Rowing Club", "123 Anystreet Putney Embankment SW10 9HF", "LRC", "Stuart", "Heap");
-		BoatClub updated = new BoatClub(1L, "London Rowing Club", "69 Someroad Putney Embankment SW3 1RX", "TRC", "Ozgur", "Kafali");
+		BoatClub updated = new BoatClub(1L, "Thames Rowing Club", "69 Someroad Putney Embankment SW3 1RX", "TRC", "Ozgur", "Kafali");
 		
 		Mockito.when(this.repo.findById(newId)).thenReturn(Optional.of(old));
 		Mockito.when(this.repo.saveAndFlush(old)).thenReturn(updated);
