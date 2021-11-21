@@ -1,4 +1,4 @@
-package com.qa.demo.createTest;
+package com.qa.demo.readTest;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -10,11 +10,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CreateBoatClubTest {
+public class ReadBoatClubTest {
 
 	private WebDriver driver;
 	
-	public String URL = "http://127.0.0.1:5500/HWAFrontEnd/HTML/Create/createBoatClub.html";
+	public String URL = "http://127.0.0.1:5500/HWAFrontEnd/HTML/Read/readBoatClubs.html";
 	
 	@BeforeEach
 	public void setup() {
@@ -25,29 +25,33 @@ public class CreateBoatClubTest {
 		this.driver.manage().window().setSize(new Dimension(1366,768));
 	}
 	
-	// Check if title is "Create a Boat Club"
+	// Check if title of page is "Read Boat Clubs"
 	@Test
 	public void titleTest() {
-		String title = "Create a Boat Club";
+		String title = "Read Boat Clubs";
 		driver.get(URL);
 		
 		Assertions.assertEquals(title, driver.getTitle());
 	}
 	
-	// Check if the h4 text is "Enter the details of the boat club below:"
+	// Check if header of page is "Let's check out some Boat Clubs!"
+	// Also checks if header is correct tag <h1>
 	@Test
-	public void h4Test() {
-		String text = "Enter the details of the boat club below:";
+	public void headerTest() {
+		String headerTest = "Let's check out some Boat Clubs!";
+		String tagTest = "h1";
 		driver.get(URL);
 		
-		WebElement h4 = driver.findElement(By.xpath("/html/body/h4"));
+		WebElement header = driver.findElement(By.xpath("/html/body/h1"));
 		
-		Assertions.assertEquals(text, h4.getText());
+		Assertions.assertEquals(headerTest, header.getText());
+		System.out.println(header.getTagName());
+		Assertions.assertEquals(tagTest, header.getTagName());
 	}
 	
-	// Check if you can return to the index page
+	// Check if you can return to the Home - Boat Clubs page
 	@Test
-	public void returnToIndexTest() {
+	public void returnHomeTest() {
 		driver.get(URL);
 		
 		WebElement gif = driver.findElement(By.xpath("/html/body/nav/div/a"));
@@ -57,15 +61,19 @@ public class CreateBoatClubTest {
 		Assertions.assertNotEquals(URL, driver.getCurrentUrl());
 	}
 	
-	// Check if the button to reset the form is labelled "Reset"
+	// Check if the button to clear the table of boat clubs says "Clear table"
 	@Test
-	public void resetBtnTest() {
-		String buttonText = "Reset";
+	public void clearTableTest() {
+		String buttonText = "Clear table";
+		String tagTest = "button";
 		driver.get(URL);
 		
-		WebElement button = driver.findElement(By.xpath("/html/body/form/button[1]"));
+		WebElement button = driver.findElement(By.xpath("/html/body/button[3]"));
 		
+		System.out.println(button.getTagName());
 		Assertions.assertEquals(buttonText, button.getText());
+		Assertions.assertEquals(tagTest, button.getTagName());
+		
 	}
 	
 	@AfterEach
