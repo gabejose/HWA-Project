@@ -2,6 +2,9 @@ Coverage: 70.2 %
 
 Due to making Selenium tests and SpringBoot tests separate from each other, I calculated the average coverage to make up for the mistake by getting the total coverage from Selenium and SpringBoot. The coverage from the Selenium tests is at 98.3 % (refer to screenshots page or presentation slides as evidence). 
 
+*side note*
+As annoying as it is, the fat .jar files couldn't be generated (despite having the correct plugins in pom.xml) due to an error saying the pom.xml files don't exist.
+
 # HWA-Project
 
 This project is a basic web application that simulates an inventory system that holds the details of rowing clubs in the UK and the different kinds of boats these rowing clubs have (ranging from small boats such as singles (1x) and doubles (2x)/pairs (2-) to bigger boats such as coxless fours (4-) and eights (8+)). This also includes the different companies that make these boats, such as Empacher, Filippi Boats and Hudson Boat Works. For the boat clubs, the details showed on the web page are its name, address, its 3 letter identifier (as issued by British Rowing) and the name of the head coach. For the boats themselves, the details showed are its type (2-, 4+, 8+, etc), its company make (e.g. Empacher Bootswerft), the average crew weight (measured in kg), the material of the riggers (aluminium or carbon), whether the riggers are wing riggers or not and the ID of the boat club that they belong to (referring to the generated ID of the boat club in SQL). 
