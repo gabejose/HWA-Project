@@ -40,11 +40,31 @@ public class BoatControllerIntegrationTest {
 		
 		ResultMatcher checkStatus = status().isCreated();
 		
-		Boat boatSaved = new Boat("8+", "Empacher", 95, "Carbon", true, club);
+		Boat boatSaved = new Boat(1L, "8+", "Empacher", 95, "Carbon", true, club);
 		String boatSavedAsJSON = this.mapper.writeValueAsString(boatSaved);
 		
 		ResultMatcher checkBody = content().json(boatSavedAsJSON);
 		
 		this.mvc.perform(request).andExpect(checkStatus).andExpect(checkBody);
+	}
+	
+	@Test
+	public void getAllBoatTest() {
+		
+	}
+	
+	@Test
+	public void getBoatByIdTest() {
+		
+	}
+	
+	@Test
+	public void updateBoatTest() {
+		
+	}
+	
+	@Test
+	public void deleteBoatTest() {
+		
 	}
 }
