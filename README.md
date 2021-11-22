@@ -34,6 +34,7 @@ Open the HWAFrontEnd folder in VS code and turn on the live server when opening 
 mvn clean package
 java -jar (project-name)-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```
+*side note* There will definitely be a fat .jar file for the SpringBoot. There might be one for Selenium which should hopefully work. If not, run the SELENIUM V2 file from Eclipse and run the project as a JUnit test (right click the project, select run as and select JUnit test)
 
 ## Unit Tests
 Unit tests allow each .java file (e.g. boat.java) to test each method without relying on the other classes to see if they work on their own before being deployed. For test coverage, it should only cover the methods within that class (i.e. coverage in all other classes besides boat.java should be 0%). Here is an example:
