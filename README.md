@@ -1,10 +1,11 @@
 Coverage: %
 # HWA-Project
 
-This project is a basic web application that simulates an inventory system that holds the details of rowing clubs in the UK and the different kinds of boats these rowing clubs have (ranging from small boats such as singles (1x) and doubles (2x)/pairs (2-) to bigger boats such as coxless fours (4-) and eights (8+)). This also includes the different companies that make these boats, such as Empacher, Filippi Boats and Hudson Boat Works.
+This project is a basic web application that simulates an inventory system that holds the details of rowing clubs in the UK and the different kinds of boats these rowing clubs have (ranging from small boats such as singles (1x) and doubles (2x)/pairs (2-) to bigger boats such as coxless fours (4-) and eights (8+)). This also includes the different companies that make these boats, such as Empacher, Filippi Boats and Hudson Boat Works. For the boat clubs, the details showed on the web page are its name, address, its 3 letter identifier (as issued by British Rowing) and the name of the head coach. For the boats themselves, the details showed are its type (2-, 4+, 8+, etc), its company make (e.g. Empacher Bootswerft), the average crew weight (measured in kg), the material of the riggers (aluminium or carbon), whether the riggers are wing riggers or not and the ID of the boat club that they belong to (referring to the generated ID of the boat club in SQL). 
 
 ## Getting Started
-This project includes a far .jar file which will allow you to start the program from the terminal. I included a method in the application that outputs a message saying "Spring is working" (for my convenience when testing) as well as the timestamp for when you start running the program. From there, you should be able to open the index.html page.
+This project includes a far .jar file which will allow you to start the program from the terminal. I included a method in the application that outputs a message saying "Spring is working" (for my convenience when testing) as well as the timestamp for when you start running the program. From there, you should be able to open the index.html page (open the front end folder in VS code and open the live server). 
+Due to unprecedented issues with Git and Internet speeds, the proper Selenium testing (which is fully functional) is stored in the folder "SELENIUM V2". The other Selenium folder is very much broken. Additionally, the Selenium stuff should've been together with the SpringBoot, so consequently there are two fat .jar files to run from the command line (apologies for inconvenience caused).
 
 ## Prerequisites
 The following software is required in order for the project to run:
@@ -24,13 +25,23 @@ The following software is required in order for the project to run:
 
 
 ## Running the program
-
+Open the HWAFrontEnd folder in VS code and turn on the live server when opening index.html. Then from the command line, you can run the .jar files. This is done by
+```
+mvn clean package
+java -jar (project-name)-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+```
 
 ## Unit Tests
 Unit tests allow each .java file (e.g. boat.java) to test each method without relying on the other classes to see if they work on their own before being deployed. For test coverage, it should only cover the methods within that class (i.e. coverage in all other classes besides boat.java should be 0%). Here is an example:
+```
+
+```
 
 ## Integration Tests
 Unlike the unit tests, integration tests test the class as well as any other classes that it may rely on to run. This helps the testing for when the code is actually running to see if it works correctly. Below is an example of an integration test in the project:
+```
+
+```
 
 ## Coding style
 
